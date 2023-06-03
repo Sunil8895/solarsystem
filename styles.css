@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(8, 8, 8);
+    overflow: hidden;
+}
+.container{
+    font-size: 10px;
+    width: 30rem;
+    height: 40em;
+    position: relative;
+}
+.sun{
+    position: absolute;
+    top: 10rem;
+    left: 15.5em;
+     right: 15em; 
+    width: 8em;
+    height: 8em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+.Earth,.Moon,.mars,.jupiter{
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0; 
+    border-radius: 50%; 
+}
+.Earth{
+    top: 4em;
+    left: 4em;
+    width: 32em;
+    height: 32em;
+    animation: orbit 36.5s linear infinite;
+}
+.Moon{
+    top: 0;
+    right: 0;
+     width: 8em; 
+    height: 8em;
+    animation: orbit 3.7s linear infinite; 
+}
+.mars{
+    top: 11em;
+    left: 10.5em;
+    width: 18em;
+    height: 18em;
+    animation: orbit 30.7s linear infinite;
+} 
+.jupiter{
+    top: 1em;
+    left: 1em;
+    width: 40em;
+    height: 40em;
+    animation: orbit 20.7s linear infinite;
+}
+.Earth::before,
+.Moon::before,
+.mars::before,
+.jupiter::before{
+    content: '';
+    position: absolute;
+    border: radius 50%;
+}
+.Earth::before{
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    border-radius: 60%;
+    background-color: rgb(127, 144, 255);
+}
+.Moon::before{
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background-color: silver;
+}
+.mars::before{
+    top: 1.5em;
+    right: 1.5em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color:red;
+}
+.jupiter::before{
+    top: 3em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    border-radius: 60%;
+    background-color: rgb(255, 127, 182);
+}
+@keyframes orbit {
+    to{
+        transform: rotate(360deg);
+    }
+}
